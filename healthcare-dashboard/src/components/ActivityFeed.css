@@ -1,0 +1,99 @@
+.activity-feed {
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2rem;
+}
+
+.activity-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.activity-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.activity-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 140px;
+  gap: 1.5rem;
+}
+
+.chart-day-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.chart-bars-wrapper {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.chart-bar {
+  width: 8px;
+  min-height: 10px;
+  border-radius: 4px;
+  transition: height 0.3s ease;
+}
+
+.chart-bar.primary {
+  background-color: #00D9FF;
+}
+
+.chart-bar.secondary {
+  background-color: #5B5FED;
+}
+
+.chart-label {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-align: center;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .activity-header {
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .activity-chart {
+    gap: 1rem;
+    height: 100px;
+  }
+
+  .chart-bars-wrapper {
+    height: 80px;
+  }
+
+  .chart-bar {
+    width: 6px;
+  }
+
+  .chart-label {
+    font-size: 0.625rem;
+  }
+} 
