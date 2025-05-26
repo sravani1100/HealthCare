@@ -1,0 +1,207 @@
+.anatomy-section {
+  background-color: #F8FAFB;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  position: relative;
+}
+
+/* Zoom icon at top right */
+.anatomy-section::before {
+  content: '🔍';
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.25rem;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.anatomy-container {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.anatomy-image {
+  width: 240px;
+  height: 400px;
+  object-fit: contain;
+}
+
+/* Scan squares */
+.scan-square {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(91, 95, 237, 0.3);
+  border-radius: 4px;
+  background-color: rgba(91, 95, 237, 0.05);
+}
+
+.scan-square::before,
+.scan-square::after {
+  content: '';
+  position: absolute;
+  background-color: rgba(91, 95, 237, 0.5);
+}
+
+.scan-square::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.scan-square::after {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.heart-scan {
+  top: 22%;
+  left: 42%;
+}
+
+.leg-scan {
+  top: 68%;
+  left: 35%;
+}
+
+.anatomy-indicator {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.indicator-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+  position: relative;
+}
+
+.indicator-dot.healthy {
+  background-color: #00D9FF;
+}
+
+.indicator-dot.warning {
+  background-color: #5B5FED;
+}
+
+.indicator-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  white-space: nowrap;
+  position: absolute;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.indicator-label.healthy {
+  color: white;
+  background-color: #00D9FF;
+}
+
+.indicator-label.warning {
+  color: white;
+  background-color: #5B5FED;
+}
+
+.label-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+/* Position labels */
+.anatomy-indicator:nth-child(3) .indicator-label {
+  left: 20px;
+  top: -8px;
+}
+
+.anatomy-indicator:nth-child(4) .indicator-label {
+  right: 20px;
+  top: -8px;
+}
+
+/* Bottom control */
+.anatomy-control {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.control-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #E5E7EB;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.control-icon::before,
+.control-icon::after {
+  content: '';
+  position: absolute;
+  background-color: #6B7280;
+}
+
+.control-icon::before {
+  width: 16px;
+  height: 2px;
+}
+
+.control-icon::after {
+  width: 2px;
+  height: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .anatomy-container {
+    width: 280px;
+    height: 370px;
+  }
+
+  .anatomy-image {
+    width: 200px;
+    height: 340px;
+  }
+  
+  .heart-scan {
+    top: 22%;
+    left: 40%;
+  }
+  
+  .leg-scan {
+    top: 68%;
+    left: 33%;
+  }
+} 
