@@ -1,0 +1,254 @@
+.dashboard-main {
+  flex: 1;
+  padding: 2.5rem;
+  /* Allow natural flow without internal scroll */
+  overflow: visible;
+  background-color: var(--white);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dashboard-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dashboard-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.dashboard-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-container {
+  position: relative;
+  width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 3.5rem 0.75rem 3rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  background-color: var(--white);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(91, 95, 237, 0.1);
+}
+
+.search-input::placeholder {
+  color: var(--text-light);
+}
+
+.notification-button-inline {
+  position: absolute;
+  right: 0.5rem;
+  background: transparent;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+}
+
+.notification-button-inline:hover {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.notification-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--warning-red);
+  border-radius: 50%;
+  border: 2px solid var(--white);
+}
+
+.user-profile-square {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-profile-square:hover {
+  transform: scale(1.05);
+}
+
+.user-avatar-square {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.add-button-square {
+  background-color: var(--primary-blue);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.add-button-square:hover {
+  background-color: var(--dark-blue);
+  transform: scale(1.05);
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: minmax(600px, 1fr) minmax(400px, 0.8fr);
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.dashboard-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.anatomy-health-section {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.dashboard-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .anatomy-health-section {
+    grid-template-columns: 340px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-main {
+    padding: 1rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dashboard-header-left,
+  .dashboard-header-right {
+    width: 100%;
+  }
+
+  .dashboard-header-right {
+    justify-content: flex-end;
+  }
+
+  .search-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-content {
+    gap: 1rem;
+  }
+
+  .dashboard-left,
+  .dashboard-right {
+    gap: 1rem;
+  }
+
+  .anatomy-health-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Wrapper for search bar and notification bell */
+.search-notification-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Adjust bell button size to match design */
+.search-notification-wrapper .notification-button {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.search-notification-wrapper .notification-button:hover {
+  background-color: var(--light-blue);
+}
+
+/* Ensure badge is positioned correctly relative to the button */
+.notification-badge-absolute {
+  top: 4px;
+  right: 4px;
+} 
